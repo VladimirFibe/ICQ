@@ -14,10 +14,11 @@ struct LoginView: View {
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-
                 VStack(spacing: 20) {
                     TextField("Email", text: $email)
+                        .modifier(AuthFieldModifier(icon: "envelope"))
                     SecureField("Password", text: $password)
+                        .modifier(AuthFieldModifier(icon: "lock"))
                 }
 
                 NavigationLink {
@@ -38,7 +39,9 @@ struct LoginView: View {
                 .controlSize(.large)
                 .padding(.horizontal, 20)
                 .shadow(color: .gray, radius: 10, x: 0, y: 0)
+
                 Spacer()
+
                 NavigationLink {
                     Text("Register")
                 } label: {
@@ -46,6 +49,7 @@ struct LoginView: View {
                 }
             }
             .padding(.horizontal)
+            .padding(.bottom, 32)
         }
     }
 }
