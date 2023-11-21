@@ -15,6 +15,14 @@
 		02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */; };
 		02EE1EB32B0CBB9D008812F2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB22B0CBB9D008812F2 /* RegistrationView.swift */; };
 		02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */; };
+		02EE1EB82B0CC30C008812F2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB72B0CC30C008812F2 /* MainTabView.swift */; };
+		02EE1EBA2B0CC413008812F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB92B0CC413008812F2 /* SettingsView.swift */; };
+		02EE1EBC2B0CC42D008812F2 /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EBB2B0CC42D008812F2 /* ChannelsView.swift */; };
+		02EE1EBE2B0CC437008812F2 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EBD2B0CC437008812F2 /* ChatsView.swift */; };
+		02EE1EC22B0CD5CE008812F2 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC12B0CD5CE008812F2 /* AvatarView.swift */; };
+		02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC32B0CD79D008812F2 /* SettingsHeaderView.swift */; };
+		02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC52B0CD8A0008812F2 /* SettingsCellViewModel.swift */; };
+		02EE1EC82B0CD8DA008812F2 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC72B0CD8DA008812F2 /* SettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFieldModifier.swift; sourceTree = "<group>"; };
 		02EE1EB22B0CBB9D008812F2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
+		02EE1EB72B0CC30C008812F2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		02EE1EB92B0CC413008812F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		02EE1EBB2B0CC42D008812F2 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
+		02EE1EBD2B0CC437008812F2 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		02EE1EC12B0CD5CE008812F2 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		02EE1EC32B0CD79D008812F2 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		02EE1EC52B0CD8A0008812F2 /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
+		02EE1EC72B0CD8DA008812F2 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +107,10 @@
 		02EE1EA62B0C9897008812F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02EE1EB62B0CC25C008812F2 /* Settings */,
 				02EE1EA52B0C988A008812F2 /* Auth */,
+				02EE1EBF2B0CC43D008812F2 /* Channels */,
+				02EE1EC02B0CC44A008812F2 /* Chats */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +135,7 @@
 			children = (
 				02EE1E952B0C9842008812F2 /* ICQApp.swift */,
 				02EE1E972B0C9842008812F2 /* ContentView.swift */,
+				02EE1EB72B0CC30C008812F2 /* MainTabView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -127,6 +147,34 @@
 				02EE1E9B2B0C9843008812F2 /* Preview Content */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02EE1EB62B0CC25C008812F2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EB92B0CC413008812F2 /* SettingsView.swift */,
+				02EE1EC32B0CD79D008812F2 /* SettingsHeaderView.swift */,
+				02EE1EC52B0CD8A0008812F2 /* SettingsCellViewModel.swift */,
+				02EE1EC72B0CD8DA008812F2 /* SettingsCell.swift */,
+				02EE1EC12B0CD5CE008812F2 /* AvatarView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		02EE1EBF2B0CC43D008812F2 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EBB2B0CC42D008812F2 /* ChannelsView.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		02EE1EC02B0CC44A008812F2 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EBD2B0CC437008812F2 /* ChatsView.swift */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,10 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EE1EC82B0CD8DA008812F2 /* SettingsCell.swift in Sources */,
+				02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */,
 				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
+				02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */,
+				02EE1EBA2B0CC413008812F2 /* SettingsView.swift in Sources */,
+				02EE1EBE2B0CC437008812F2 /* ChatsView.swift in Sources */,
+				02EE1EBC2B0CC42D008812F2 /* ChannelsView.swift in Sources */,
+				02EE1EC22B0CD5CE008812F2 /* AvatarView.swift in Sources */,
 				02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */,
 				02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */,
+				02EE1EB82B0CC30C008812F2 /* MainTabView.swift in Sources */,
 				02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */,
 				02EE1EB32B0CBB9D008812F2 /* RegistrationView.swift in Sources */,
 			);
