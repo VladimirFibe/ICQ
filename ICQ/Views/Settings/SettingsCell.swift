@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsCell: View {
     let viewModel: SettingsCellViewModel
+
     var body: some View {
         HStack {
             Image(systemName: viewModel.image)
@@ -10,14 +11,16 @@ struct SettingsCell: View {
                 .frame(width: 22, height: 22)
                 .padding(6)
                 .background(viewModel.color)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .cornerRadius(6)
             
             Text(viewModel.title)
                 .font(.system(size: 15))
+
             Spacer()
+
             Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
+                .foregroundStyle(.secondary)
         }
     }
 }

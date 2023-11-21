@@ -16,8 +16,12 @@ struct SettingsView: View {
             }
 
             Section {
-                Text("Log Out")
-                    .frame(maxWidth: .infinity)
+                Button(action: {}) {
+                    Text("Log Out")
+                        .font(.system(size: 16, weight: .semibold))
+                        .frame(maxWidth: .infinity)
+                }
+                .tint(.red)
             }
         }
     }
