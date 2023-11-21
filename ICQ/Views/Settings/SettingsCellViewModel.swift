@@ -8,6 +8,7 @@ enum SettingsCellViewModel: Identifiable, CaseIterable {
     var id: SettingsCellViewModel {
         self
     }
+    
     var title: String {
         switch self {
         case .account: return "Account"

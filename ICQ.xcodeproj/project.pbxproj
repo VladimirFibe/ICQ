@@ -23,6 +23,9 @@
 		02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC32B0CD79D008812F2 /* SettingsHeaderView.swift */; };
 		02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC52B0CD8A0008812F2 /* SettingsCellViewModel.swift */; };
 		02EE1EC82B0CD8DA008812F2 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EC72B0CD8DA008812F2 /* SettingsCell.swift */; };
+		02EE1ECB2B0CE536008812F2 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1ECA2B0CE536008812F2 /* EditProfileView.swift */; };
+		02EE1ECD2B0CF063008812F2 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1ECC2B0CF063008812F2 /* StatusSelectorView.swift */; };
+		02EE1ECF2B0CF0D2008812F2 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1ECE2B0CF0D2008812F2 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		02EE1EC32B0CD79D008812F2 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		02EE1EC52B0CD8A0008812F2 /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		02EE1EC72B0CD8DA008812F2 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		02EE1ECA2B0CE536008812F2 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		02EE1ECC2B0CF063008812F2 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
+		02EE1ECE2B0CF0D2008812F2 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		02EE1EA62B0C9897008812F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02EE1EC92B0CE526008812F2 /* EditProfile */,
 				02EE1EB62B0CC25C008812F2 /* Settings */,
 				02EE1EA52B0C988A008812F2 /* Auth */,
 				02EE1EBF2B0CC43D008812F2 /* Channels */,
@@ -175,6 +182,16 @@
 				02EE1EBD2B0CC437008812F2 /* ChatsView.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		02EE1EC92B0CE526008812F2 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1ECA2B0CE536008812F2 /* EditProfileView.swift */,
+				02EE1ECC2B0CF063008812F2 /* StatusSelectorView.swift */,
+				02EE1ECE2B0CF0D2008812F2 /* Status.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EE1ECB2B0CE536008812F2 /* EditProfileView.swift in Sources */,
 				02EE1EC82B0CD8DA008812F2 /* SettingsCell.swift in Sources */,
 				02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */,
+				02EE1ECF2B0CF0D2008812F2 /* Status.swift in Sources */,
+				02EE1ECD2B0CF063008812F2 /* StatusSelectorView.swift in Sources */,
 				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
 				02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */,
 				02EE1EBA2B0CC413008812F2 /* SettingsView.swift in Sources */,

@@ -4,7 +4,9 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
-                SettingsHeaderView()
+                NavigationLink(destination: EditProfileView()) {
+                    SettingsHeaderView()
+                }
             }
 
             Section {
@@ -28,5 +30,7 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    NavigationStack {
+        SettingsView()
+    }
 }
