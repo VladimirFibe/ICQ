@@ -6,21 +6,16 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 32) {
-                VStack(alignment: .leading) {
-                    Text("Hello")
-                    Text("Welcome Back")
-                        .foregroundStyle(.blue)
-                }
-                .font(.largeTitle.bold())
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-                VStack(spacing: 20) {
+                // Header
+                AuthHeader(title: "Hello", subtitle: "Welcome Back")
+                // TextFields
+                VStack(spacing: 30) {
                     TextField("Email", text: $email)
                         .modifier(AuthFieldModifier(icon: "envelope"))
                     SecureField("Password", text: $password)
                         .modifier(AuthFieldModifier(icon: "lock"))
                 }
-
+                // Forgot password
                 NavigationLink {
                     Text("Passord")
                 } label: {
@@ -28,7 +23,7 @@ struct LoginView: View {
                         .font(.system(size: 13, weight: .semibold))
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-
+                // Sign in button
                 Button(action: {}) {
                     Text("Sign in")
                         .font(.headline)
@@ -41,15 +36,15 @@ struct LoginView: View {
                 .shadow(color: .gray, radius: 10, x: 0, y: 0)
 
                 Spacer()
-
+                // Sign Up link
                 NavigationLink {
-                    Text("Register")
+                    RegistrationView()
                 } label: {
                     Text("Don't have an account? ") + Text("Sign up").bold()
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 32)
+            .padding(.vertical, 32)
         }
     }
 }

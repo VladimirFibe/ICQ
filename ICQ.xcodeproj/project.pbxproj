@@ -13,6 +13,8 @@
 		02EE1E9D2B0C9843008812F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E9C2B0C9843008812F2 /* Preview Assets.xcassets */; };
 		02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EA32B0C9877008812F2 /* LoginView.swift */; };
 		02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */; };
+		02EE1EB32B0CBB9D008812F2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB22B0CBB9D008812F2 /* RegistrationView.swift */; };
+		02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		02EE1EA32B0C9877008812F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		02EE1EA72B0CA2C8008812F2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFieldModifier.swift; sourceTree = "<group>"; };
+		02EE1EB22B0CBB9D008812F2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,10 @@
 		02EE1E942B0C9842008812F2 /* ICQ */ = {
 			isa = PBXGroup;
 			children = (
-				02EE1E952B0C9842008812F2 /* ICQApp.swift */,
-				02EE1E972B0C9842008812F2 /* ContentView.swift */,
+				02EE1EB02B0CB971008812F2 /* App */,
+				02EE1EAF2B0CB8ED008812F2 /* Modifiers */,
 				02EE1EA62B0C9897008812F2 /* Views */,
-				02EE1E992B0C9843008812F2 /* Assets.xcassets */,
-				02EE1E9B2B0C9843008812F2 /* Preview Content */,
+				02EE1EB12B0CB97A008812F2 /* Supporting Files */,
 			);
 			path = ICQ;
 			sourceTree = "<group>";
@@ -79,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				02EE1EA32B0C9877008812F2 /* LoginView.swift */,
-				02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */,
+				02EE1EB22B0CBB9D008812F2 /* RegistrationView.swift */,
+				02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -97,6 +101,32 @@
 			children = (
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		02EE1EAF2B0CB8ED008812F2 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EAD2B0CB25F008812F2 /* AuthFieldModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		02EE1EB02B0CB971008812F2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1E952B0C9842008812F2 /* ICQApp.swift */,
+				02EE1E972B0C9842008812F2 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		02EE1EB12B0CB97A008812F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1E992B0C9843008812F2 /* Assets.xcassets */,
+				02EE1E9B2B0C9843008812F2 /* Preview Content */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +201,10 @@
 			files = (
 				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
 				02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */,
+				02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */,
 				02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */,
+				02EE1EB32B0CBB9D008812F2 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
