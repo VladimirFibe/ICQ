@@ -11,6 +11,7 @@
 		02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E972B0C9842008812F2 /* ContentView.swift */; };
 		02EE1E9A2B0C9843008812F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E992B0C9843008812F2 /* Assets.xcassets */; };
 		02EE1E9D2B0C9843008812F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E9C2B0C9843008812F2 /* Preview Assets.xcassets */; };
+		02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1EA32B0C9877008812F2 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		02EE1E972B0C9842008812F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		02EE1E992B0C9843008812F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EE1E9C2B0C9843008812F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		02EE1EA32B0C9877008812F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		02EE1EA72B0CA2C8008812F2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,8 @@
 		02EE1E892B0C9842008812F2 = {
 			isa = PBXGroup;
 			children = (
+				02EE1EA72B0CA2C8008812F2 /* README.md */,
+				02EE1EA82B0CA2DB008812F2 /* img */,
 				02EE1E942B0C9842008812F2 /* ICQ */,
 				02EE1E932B0C9842008812F2 /* Products */,
 			);
@@ -53,6 +58,7 @@
 			children = (
 				02EE1E952B0C9842008812F2 /* ICQApp.swift */,
 				02EE1E972B0C9842008812F2 /* ContentView.swift */,
+				02EE1EA62B0C9897008812F2 /* Views */,
 				02EE1E992B0C9843008812F2 /* Assets.xcassets */,
 				02EE1E9B2B0C9843008812F2 /* Preview Content */,
 			);
@@ -65,6 +71,29 @@
 				02EE1E9C2B0C9843008812F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		02EE1EA52B0C988A008812F2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EA32B0C9877008812F2 /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		02EE1EA62B0C9897008812F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02EE1EA52B0C988A008812F2 /* Auth */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		02EE1EA82B0CA2DB008812F2 /* img */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */,
 				02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */,
 			);
