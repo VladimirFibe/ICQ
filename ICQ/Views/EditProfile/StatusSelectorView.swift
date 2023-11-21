@@ -12,6 +12,7 @@ struct StatusSelectorView: View {
                     Image(systemName: "checkmark")
                 }
             }
+            .contentShape(Rectangle())
             .onTapGesture {
                 selected = status.rawValue
                 dismiss()
