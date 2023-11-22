@@ -7,10 +7,10 @@ struct ChatInputView: View {
         VStack {
             Rectangle()
                 .frame(height: 0.75)
-                .foregroundStyle(.gray)
-            
+                .foregroundStyle(Color(.separator))
+
             HStack {
-                TextField("Message...", text: $text)
+                TextField("Message...", text: $text, axis: .vertical)
                 Button(action: action) {
                     Text("Send")
                         .bold()

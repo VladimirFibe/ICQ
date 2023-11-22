@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MessageViewModel {
     let message: Message
+    
     var image: String? {
         message.profileImageUrl
     }
@@ -10,10 +11,9 @@ struct MessageViewModel {
         message.uid
     }
 
-    var currentUid: String {
+//    var currentUid: String {
 //        AuthViewModel.shared.person.id ?? ""
-        "Text"
-    }
+//    }
 
     var text: String {
         message.text
