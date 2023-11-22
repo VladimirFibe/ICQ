@@ -2,29 +2,32 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Form {
-            Section {
-                NavigationLink(destination: EditProfileView()) {
-                    SettingsHeaderView()
+        NavigationStack {
+            Form {
+                Section {
+                    NavigationLink(destination: EditProfileView()) {
+                        SettingsHeaderView()
+                    }
                 }
-            }
 
-            Section {
-                VStack(spacing: 20) {
-                  ForEach(SettingsCellViewModel.allCases) { 
-                    SettingsCell(viewModel: $0)
-                  }
+                Section {
+                    VStack(spacing: 20) {
+                      ForEach(SettingsCellViewModel.allCases) { 
+                        SettingsCell(viewModel: $0)
+                      }
+                    }
                 }
-            }
 
-            Section {
-                Button(action: {}) {
-                    Text("Log Out")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(maxWidth: .infinity)
+                Section {
+                    Button(action: {}) {
+                        Text("Log Out")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .tint(.red)
                 }
-                .tint(.red)
             }
+            .navigationTitle("Settings")
         }
     }
 }

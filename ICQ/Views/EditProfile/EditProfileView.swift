@@ -41,6 +41,7 @@ struct EditProfileView: View {
                 photosPickerItem = nil
             }
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

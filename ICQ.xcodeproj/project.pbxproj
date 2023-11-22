@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02A18DB22B0D89580010F233 /* ChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB12B0D89580010F233 /* ChatsCell.swift */; };
+		02A18DB42B0D8D940010F233 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB32B0D8D940010F233 /* NewMessageView.swift */; };
+		02A18DB72B0DCC7C0010F233 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB62B0DCC7C0010F233 /* ChatView.swift */; };
+		02A18DBA2B0DD07F0010F233 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB92B0DD07F0010F233 /* ChatBubble.swift */; };
 		02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E952B0C9842008812F2 /* ICQApp.swift */; };
 		02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E972B0C9842008812F2 /* ContentView.swift */; };
 		02EE1E9A2B0C9843008812F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E992B0C9843008812F2 /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A18DB12B0D89580010F233 /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
+		02A18DB32B0D8D940010F233 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		02A18DB62B0DCC7C0010F233 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		02A18DB92B0DD07F0010F233 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		02EE1E922B0C9842008812F2 /* ICQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EE1E952B0C9842008812F2 /* ICQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICQApp.swift; sourceTree = "<group>"; };
 		02EE1E972B0C9842008812F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02A18DB52B0D8D9B0010F233 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				02A18DB32B0D8D940010F233 /* NewMessageView.swift */,
+			);
+			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		02A18DB82B0DCC840010F233 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				02A18DB62B0DCC7C0010F233 /* ChatView.swift */,
+				02A18DB92B0DD07F0010F233 /* ChatBubble.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		02EE1E892B0C9842008812F2 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +143,8 @@
 				02EE1EA52B0C988A008812F2 /* Auth */,
 				02EE1EBF2B0CC43D008812F2 /* Channels */,
 				02EE1EC02B0CC44A008812F2 /* Chats */,
+				02A18DB52B0D8D9B0010F233 /* NewMessage */,
+				02A18DB82B0DCC840010F233 /* Chat */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				02EE1EBD2B0CC437008812F2 /* ChatsView.swift */,
+				02A18DB12B0D89580010F233 /* ChatsCell.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -266,6 +294,7 @@
 			files = (
 				02EE1ECB2B0CE536008812F2 /* EditProfileView.swift in Sources */,
 				02EE1EC82B0CD8DA008812F2 /* SettingsCell.swift in Sources */,
+				02A18DB42B0D8D940010F233 /* NewMessageView.swift in Sources */,
 				02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */,
 				02EE1ECF2B0CF0D2008812F2 /* Status.swift in Sources */,
 				02EE1ECD2B0CF063008812F2 /* StatusSelectorView.swift in Sources */,
@@ -275,6 +304,9 @@
 				02EE1EBE2B0CC437008812F2 /* ChatsView.swift in Sources */,
 				02EE1EBC2B0CC42D008812F2 /* ChannelsView.swift in Sources */,
 				02EE1EC22B0CD5CE008812F2 /* AvatarView.swift in Sources */,
+				02A18DB72B0DCC7C0010F233 /* ChatView.swift in Sources */,
+				02A18DBA2B0DD07F0010F233 /* ChatBubble.swift in Sources */,
+				02A18DB22B0D89580010F233 /* ChatsCell.swift in Sources */,
 				02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */,
 				02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */,

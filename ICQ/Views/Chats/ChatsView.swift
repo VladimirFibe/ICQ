@@ -1,15 +1,42 @@
-//
-//  ChatsView.swift
-//  ICQ
-//
-//  Created by Vladimir Fibe on 21.11.2023.
-//
-
 import SwiftUI
 
 struct ChatsView: View {
+    @State private var show = false
+    @State private var path = [String]()
+    @State private var chats: [String] = ["Vladimir", "Katya", "Masha", "Nastya", "Semyon", "Margarita", "Violetta"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $path) {
+            List(chats, id: \.self) { chat in
+                NavigationLink(value: chat) {
+                    ChatsCell(chat: chat)
+                }
+            }
+            .overlay(alignment: .bottomTrailing) {
+                Button {
+                    show.toggle()
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .background(.blue)
+                        .tint(.white)
+                        .clipShape(Circle())
+                        .padding()
+                }
+            }
+            .navigationDestination(for: String.self) { chat in
+                ChatView()
+            }
+        }
+        .sheet(isPresented: $show, onDismiss: {
+            let chat = "Baby"
+            chats.append(chat)
+            path = [chat]
+        }) {
+            NewMessageView()
+        }
     }
 }
 
