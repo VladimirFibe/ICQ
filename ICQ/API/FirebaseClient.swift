@@ -1,6 +1,7 @@
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 
 final class FirebaseClient {
     static let shared = FirebaseClient()
@@ -54,5 +55,15 @@ final class FirebaseClient {
     
     func signOut() throws {
         try Auth.auth().signOut()
+    }
+
+    func uploadImage(_ image: UIImage) async throws -> String? {
+        guard let imageData = image.jpegData(compressionQuality: 0.6)
+        else { return nil }
+        let path = "/profile/\(Person.currentId).jpg"
+        let ref = Storage.storage().reference(withPath: path)
+        let _ = try await ref.putDataAsync(imageData)
+        let url = try await ref.downloadURL()
+        return url.absoluteString
     }
 }
