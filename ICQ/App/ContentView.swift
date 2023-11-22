@@ -1,8 +1,13 @@
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
     var body: some View {
-        MainTabView()
+        if Auth.auth().currentUser == nil {
+            LoginView()
+        } else {
+            MainTabView()
+        }
     }
 }
 

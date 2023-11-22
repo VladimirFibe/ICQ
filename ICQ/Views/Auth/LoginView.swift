@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @ObservedObject var viewModel = LoginViewModel()
     var body: some View {
         NavigationStack {
             VStack(spacing: 32) {
@@ -10,9 +9,9 @@ struct LoginView: View {
                 AuthHeader(title: "Hello", subtitle: "Welcome Back")
                 // TextFields
                 VStack(spacing: 30) {
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $viewModel.email)
                         .modifier(AuthFieldModifier(icon: "envelope"))
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.password)
                         .modifier(AuthFieldModifier(icon: "lock"))
                 }
                 // Forgot password
@@ -24,7 +23,7 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 // Sign in button
-                Button(action: {}) {
+                Button(action: viewModel.login) {
                     Text("Sign in")
                         .font(.headline)
                         .frame(maxWidth: .infinity)

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var viewModel = SettingsViewModel()
     var body: some View {
         NavigationStack {
             Form {
@@ -19,7 +20,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Button(action: {}) {
+                    Button(action: viewModel.logout) {
                         Text("Log Out")
                             .font(.system(size: 16, weight: .semibold))
                             .frame(maxWidth: .infinity)

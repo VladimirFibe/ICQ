@@ -2,12 +2,10 @@ import SwiftUI
 
 struct ChatView: View {
     @State private var text = ""
-    var messages: [Message] = [
-        Message(), Message(profileImageUrl: nil), Message(), Message()
-    ]
+    @ObservedObject var viewModel = ChatViewModel()
     var body: some View {
         VStack {
-            List(messages) { message in
+            List(viewModel.messages) { message in
                 MessageView(viewModel: MessageViewModel(message: message))
                     .listRowSeparator(.hidden)
             }
@@ -16,10 +14,15 @@ struct ChatView: View {
         }
         .toolbar(.hidden, for: .tabBar)
         ChatInputView(text: $text) {
-            print(text)
+            let message = Message(text: text)
+            viewModel.messages.append(message)
             text = ""
         }
+        .onAppear {
+            viewModel.getMessages()
+        }
     }
+
 }
 
 #Preview {
