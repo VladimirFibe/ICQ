@@ -12,7 +12,7 @@ struct SettingsCell: View {
                 .padding(6)
                 .background(viewModel.color)
                 .foregroundStyle(.white)
-                .cornerRadius(6)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
             
             Text(viewModel.title)
                 .font(.system(size: 15))

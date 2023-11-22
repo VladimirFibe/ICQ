@@ -2,7 +2,11 @@ import SwiftUI
 
 struct ChatBubble: Shape {
     var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
+    var isFromCurrentUser = false
+    var corners: UIRectCorner {
+        isFromCurrentUser ? [.bottomLeft, .topLeft, .topRight]
+        : [.bottomRight, .topLeft, .topRight]
+    }
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(
             roundedRect: rect,
@@ -14,8 +18,8 @@ struct ChatBubble: Shape {
 }
 
 extension View {
-  func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-    clipShape(ChatBubble(radius: radius, corners: corners))
+    func cornerRadius(_ radius: CGFloat, isFromCurrentUser: Bool = false) -> some View {
+    clipShape(ChatBubble(radius: radius, isFromCurrentUser: isFromCurrentUser))
   }
 }
 
@@ -23,5 +27,5 @@ extension View {
     Text("Hello")
         .padding()
         .background(.gray)
-        .cornerRadius(10, corners: [.bottomLeft, .topLeft, .topRight])
+        .cornerRadius(16, isFromCurrentUser: true)
 }

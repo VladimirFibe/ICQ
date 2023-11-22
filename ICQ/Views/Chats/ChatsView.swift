@@ -10,7 +10,9 @@ struct ChatsView: View {
                 NavigationLink(value: chat) {
                     ChatsCell(chat: chat)
                 }
+                .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
             .overlay(alignment: .bottomTrailing) {
                 Button {
                     show.toggle()

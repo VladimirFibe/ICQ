@@ -11,6 +11,10 @@
 		02A18DB42B0D8D940010F233 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB32B0D8D940010F233 /* NewMessageView.swift */; };
 		02A18DB72B0DCC7C0010F233 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB62B0DCC7C0010F233 /* ChatView.swift */; };
 		02A18DBA2B0DD07F0010F233 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DB92B0DD07F0010F233 /* ChatBubble.swift */; };
+		02A18DBC2B0DD59C0010F233 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DBB2B0DD59C0010F233 /* MessageView.swift */; };
+		02A18DBE2B0DD6210010F233 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */; };
+		02A18DC02B0DD6E80010F233 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DBF2B0DD6E80010F233 /* Message.swift */; };
+		02A18DC22B0DE9E60010F233 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DC12B0DE9E60010F233 /* ChatInputView.swift */; };
 		02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E952B0C9842008812F2 /* ICQApp.swift */; };
 		02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E972B0C9842008812F2 /* ContentView.swift */; };
 		02EE1E9A2B0C9843008812F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E992B0C9843008812F2 /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 		02A18DB32B0D8D940010F233 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		02A18DB62B0DCC7C0010F233 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		02A18DB92B0DD07F0010F233 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		02A18DBB2B0DD59C0010F233 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		02A18DBF2B0DD6E80010F233 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		02A18DC12B0DE9E60010F233 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
 		02EE1E922B0C9842008812F2 /* ICQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EE1E952B0C9842008812F2 /* ICQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICQApp.swift; sourceTree = "<group>"; };
 		02EE1E972B0C9842008812F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +92,9 @@
 			children = (
 				02A18DB62B0DCC7C0010F233 /* ChatView.swift */,
 				02A18DB92B0DD07F0010F233 /* ChatBubble.swift */,
+				02A18DBB2B0DD59C0010F233 /* MessageView.swift */,
+				02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */,
+				02A18DC12B0DE9E60010F233 /* ChatInputView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 				02EE1EAF2B0CB8ED008812F2 /* Modifiers */,
 				02EE1EA62B0C9897008812F2 /* Views */,
 				02EE1EB12B0CB97A008812F2 /* Supporting Files */,
+				02A18DBF2B0DD6E80010F233 /* Message.swift */,
 			);
 			path = ICQ;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 				02EE1EC42B0CD79D008812F2 /* SettingsHeaderView.swift in Sources */,
 				02EE1ECF2B0CF0D2008812F2 /* Status.swift in Sources */,
 				02EE1ECD2B0CF063008812F2 /* StatusSelectorView.swift in Sources */,
+				02A18DBC2B0DD59C0010F233 /* MessageView.swift in Sources */,
 				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
 				02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */,
 				02EE1EBA2B0CC413008812F2 /* SettingsView.swift in Sources */,
@@ -307,12 +320,15 @@
 				02A18DB72B0DCC7C0010F233 /* ChatView.swift in Sources */,
 				02A18DBA2B0DD07F0010F233 /* ChatBubble.swift in Sources */,
 				02A18DB22B0D89580010F233 /* ChatsCell.swift in Sources */,
+				02A18DC22B0DE9E60010F233 /* ChatInputView.swift in Sources */,
 				02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */,
 				02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* ContentView.swift in Sources */,
 				02EE1EB82B0CC30C008812F2 /* MainTabView.swift in Sources */,
 				02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */,
+				02A18DC02B0DD6E80010F233 /* Message.swift in Sources */,
 				02EE1EB32B0CBB9D008812F2 /* RegistrationView.swift in Sources */,
+				02A18DBE2B0DD6210010F233 /* MessageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

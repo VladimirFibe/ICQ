@@ -1,8 +1,14 @@
 import SwiftUI
 
 struct ChatView: View {
+    var messages: [Message] = [Message(), Message(profileImageUrl: nil), Message(), Message()]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(messages) { message in
+            MessageView(viewModel: MessageViewModel(message: message))
+                .listRowSeparator(.hidden)
+        }
+        .listStyle(.plain)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 
