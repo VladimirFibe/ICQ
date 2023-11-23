@@ -1,5 +1,4 @@
 import SwiftUI
-import PhotosUI
 
 final class ProfilePhotoSelectorViewModel: ObservableObject {
     @Published var avatarImage: UIImage?
@@ -11,9 +10,7 @@ final class ProfilePhotoSelectorViewModel: ObservableObject {
         guard let avatarImage else { return }
         Task {
             do {
-                if let url = try await FirebaseClient.shared.uploadImage(avatarImage) {
-                    print(url)
-                }
+                try await FirebaseClient.shared.uploadAvatarImage(avatarImage)
             } catch {
                 print(error.localizedDescription)
             }

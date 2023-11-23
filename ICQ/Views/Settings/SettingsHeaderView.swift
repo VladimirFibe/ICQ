@@ -1,13 +1,18 @@
 import SwiftUI
 
 struct SettingsHeaderView: View {
+    let viewModel = SettingsHeaderViewModel()
     var body: some View {
         HStack {
-            AvatarView()
+            viewModel.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 64, height: 64)
+                .clipShape(Circle())
             VStack(alignment: .leading, spacing: 4) {
-                Text("Eddie Brock")
+                Text(viewModel.fullname)
                     .bold()
-                Text("Available")
+                Text(viewModel.status)
                     .foregroundStyle(.secondary)
             }
             .font(.system(size: 14))

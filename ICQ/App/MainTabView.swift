@@ -8,7 +8,6 @@ enum MainTabs {
 
 struct MainTabView: View {
     @State private var selection: MainTabs = .chats
-    @State private var show = true
     var body: some View {
         TabView(selection: $selection) {
             ChatsView()
@@ -20,9 +19,6 @@ struct MainTabView: View {
             SettingsView()
                 .tabItem { Image(systemName: "gear") }
                 .tag(MainTabs.settings)
-        }
-        .sheet(isPresented: $show) {
-            ProfilePhotoSelectorView()
         }
     }
 }

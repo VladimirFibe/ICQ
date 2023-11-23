@@ -7,6 +7,7 @@ struct NewMessageView: View {
         let _ = "Name".localizedCaseInsensitiveContains(text)
         return []
     }
+
     var body: some View {
         NavigationStack {
             List(0 ..< 5) { item in

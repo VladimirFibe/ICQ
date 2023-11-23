@@ -20,8 +20,4 @@ final class RegistrationViewModel: ObservableObject {
             }
         }
     }
-
-    func uploadProfileImage() {
-
-    }
 }

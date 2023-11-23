@@ -2,16 +2,15 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
-    @State private var avatarImage: UIImage?
+    @ObservedObject var viewModel = EditProfileViewModel()
     @State private var photosPickerItem: PhotosPickerItem?
-    @State private var name = "Eddie Brock"
-    @State private var status = "Available"
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         Form {
             Section {
                 HStack(alignment: .top) {
                     VStack {
-                        Image(uiImage: avatarImage ?? UIImage(resource: .avatar))
+                        viewModel.image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 64, height: 64)
@@ -21,27 +20,41 @@ struct EditProfileView: View {
                     Text("Enter your name or change your profile photo")
                         .foregroundStyle(.secondary)
                 }
-                TextField("", text: $name)
+                TextField("", text: $viewModel.name)
             }
 
             Section("Status") {
-                NavigationLink(destination: StatusSelectorView(selected: $status)) {
-                    Text(status)
+                NavigationLink(destination: StatusSelectorView(selected: $viewModel.status)) {
+                    Text(viewModel.status)
                 }
             }
         }
+        .navigationBarBackButtonHidden()
         .navigationTitle("Edit Profile")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: photosPickerItem) { _, _ in
             Task {
                 if let photosPickerItem,
                    let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
-                    avatarImage = UIImage(data: data)
+                    viewModel.avatarImage = UIImage(data: data)
                 }
                 photosPickerItem = nil
             }
         }
         .toolbar(.hidden, for: .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    dismiss()
+                }
+            }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Save") {
+                    viewModel.save()
+                    dismiss()
+                }
+            }
+        }
     }
 }
 
