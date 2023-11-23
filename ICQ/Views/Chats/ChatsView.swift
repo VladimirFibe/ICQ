@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ChatsView: View {
     @State private var show = false
+    @State private var selectedPerson: Person?
     @State private var path = [String]()
     @State private var chats: [String] = ["Vladimir", "Katya", "Masha", "Nastya", "Semyon", "Margarita", "Violetta"]
     var body: some View {
@@ -29,15 +30,18 @@ struct ChatsView: View {
                 }
             }
             .navigationDestination(for: String.self) { chat in
-                ChatView()
+                ChatView(person: Person(username: chat))
             }
         }
         .sheet(isPresented: $show, onDismiss: {
-            let chat = "Baby"
-            chats.append(chat)
-            path = [chat]
+            if let person = selectedPerson {
+                let chat = person.username
+                chats.append(chat)
+                path = [chat]
+                selectedPerson = nil
+            }
         }) {
-            NewMessageView()
+            NewMessageView(selectedPerson: $selectedPerson)
         }
     }
 }

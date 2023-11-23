@@ -3,6 +3,7 @@ import SwiftUI
 struct ChatView: View {
     @State private var text = ""
     @ObservedObject var viewModel = ChatViewModel()
+    var person: Person
     var body: some View {
         VStack {
             List(viewModel.messages) { message in
@@ -10,21 +11,21 @@ struct ChatView: View {
                     .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-
+            ChatInputView(text: $text) {
+                let message = Message(text: text)
+                viewModel.messages.append(message)
+                text = ""
+            }
         }
         .toolbar(.hidden, for: .tabBar)
-        ChatInputView(text: $text) {
-            let message = Message(text: text)
-            viewModel.messages.append(message)
-            text = ""
-        }
+        .navigationTitle(person.username)
         .onAppear {
             viewModel.getMessages()
         }
     }
 
 }
-
-#Preview {
-    ChatView()
-}
+//
+//#Preview {
+//    ChatView()
+//}

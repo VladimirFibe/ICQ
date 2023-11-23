@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NewMessageView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel = NewMessageViewModel()
+    @Binding var selectedPerson: Person?
     @State private var text = ""
     var filtered: [String] {
         let _ = "Name".localizedCaseInsensitiveContains(text)
@@ -10,11 +12,22 @@ struct NewMessageView: View {
 
     var body: some View {
         NavigationStack {
-            List(0 ..< 5) { item in
-                SettingsHeaderView()
-                    .onTapGesture {
-                        dismiss()
+            List(viewModel.persons) { person in
+                HStack {
+                    AvatarView(url: person.avatarLink)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(person.fullname)
+                            .bold()
+                        Text(person.status)
+                            .foregroundStyle(.secondary)
                     }
+                    .font(.system(size: 14))
+                }
+                .onTapGesture {
+                    selectedPerson = person
+                    dismiss()
+                }
             }
             .searchable(text: $text, prompt: Text("Users"))
             .toolbar {
@@ -29,5 +42,5 @@ struct NewMessageView: View {
 }
 
 #Preview {
-    NewMessageView()
+    NewMessageView(selectedPerson: .constant(nil))
 }
