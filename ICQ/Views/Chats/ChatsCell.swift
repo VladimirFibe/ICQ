@@ -19,5 +19,5 @@ struct ChatsCell: View {
 }
 
 #Preview {
-    ChatsCell(recent: Recent(uid: "", avatarLink: "", text: "text"))
+    ChatsCell(recent: Recent(uid: "username", avatarLink: "", text: "text"))
 }
