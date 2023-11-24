@@ -28,6 +28,7 @@
 		02A18DE82B0E35300010F233 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DE72B0E35300010F233 /* RegistrationViewModel.swift */; };
 		02A18DEA2B0E48DD0010F233 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DE92B0E48DD0010F233 /* ProfilePhotoSelectorView.swift */; };
 		02A18DEC2B0E4B430010F233 /* ProfilePhotoSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A18DEB2B0E4B430010F233 /* ProfilePhotoSelectorViewModel.swift */; };
+		02AA0A6A2B107BD10015EA61 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA0A692B107BD10015EA61 /* ChatsViewModel.swift */; };
 		02C3026B2B0F14A800C8F5E4 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3026A2B0F14A800C8F5E4 /* AuthenticationViewModel.swift */; };
 		02C3026D2B0F14DA00C8F5E4 /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3026C2B0F14DA00C8F5E4 /* AuthenticationState.swift */; };
 		02C302742B0F64A600C8F5E4 /* SettingsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C302732B0F64A600C8F5E4 /* SettingsHeaderViewModel.swift */; };
@@ -75,6 +76,7 @@
 		02A18DE72B0E35300010F233 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		02A18DE92B0E48DD0010F233 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 		02A18DEB2B0E4B430010F233 /* ProfilePhotoSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorViewModel.swift; sourceTree = "<group>"; };
+		02AA0A692B107BD10015EA61 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		02C3026A2B0F14A800C8F5E4 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		02C3026C2B0F14DA00C8F5E4 /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
 		02C302732B0F64A600C8F5E4 /* SettingsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -134,10 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				02C3027E2B10319100C8F5E4 /* Chat */,
-				02A18DB92B0DD07F0010F233 /* ChatBubble.swift */,
-				02A18DBB2B0DD59C0010F233 /* MessageView.swift */,
-				02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */,
-				02A18DC12B0DE9E60010F233 /* ChatInputView.swift */,
+				02AA0A682B1061BB0015EA61 /* Message */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -165,6 +164,16 @@
 				02A18DDC2B0E149A0010F233 /* FirebaseClient.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		02AA0A682B1061BB0015EA61 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				02A18DBB2B0DD59C0010F233 /* MessageView.swift */,
+				02A18DB92B0DD07F0010F233 /* ChatBubble.swift */,
+				02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		02C3026E2B0F175000C8F5E4 /* Authentication */ = {
@@ -216,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				02A18DC42B0DF9C90010F233 /* ChatViewModel.swift */,
+				02A18DC12B0DE9E60010F233 /* ChatInputView.swift */,
 				02A18DB62B0DCC7C0010F233 /* ChatView.swift */,
 			);
 			path = Chat;
@@ -348,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				02EE1EBD2B0CC437008812F2 /* ChatsView.swift */,
+				02AA0A692B107BD10015EA61 /* ChatsViewModel.swift */,
 				02A18DB12B0D89580010F233 /* ChatsCell.swift */,
 			);
 			path = Chats;
@@ -478,6 +489,7 @@
 				02A18DC22B0DE9E60010F233 /* ChatInputView.swift in Sources */,
 				02EE1EAE2B0CB25F008812F2 /* AuthFieldModifier.swift in Sources */,
 				02EE1EB52B0CBCE9008812F2 /* AuthHeader.swift in Sources */,
+				02AA0A6A2B107BD10015EA61 /* ChatsViewModel.swift in Sources */,
 				02EE1E982B0C9842008812F2 /* AuthenticationView.swift in Sources */,
 				02EE1EB82B0CC30C008812F2 /* MainTabView.swift in Sources */,
 				02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */,

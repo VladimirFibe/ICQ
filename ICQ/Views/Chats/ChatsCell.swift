@@ -1,15 +1,16 @@
 import SwiftUI
 
 struct ChatsCell: View {
-    let chat: String
+    let recent: Recent
     var body: some View {
         HStack {
-            AvatarView(width: 48)
+            AvatarView(url: recent.avatarLink, width: 48)
             VStack(alignment: .leading, spacing: 4) {
-                Text(chat)
+                Text(recent.uid)
                     .font(.system(size: 14, weight: .semibold))
-                Text("Status")
+                Text(recent.text)
                     .font(.system(size: 15))
+                    .lineLimit(2)
                     .foregroundStyle(.secondary)
             }
             Spacer()
@@ -18,5 +19,5 @@ struct ChatsCell: View {
 }
 
 #Preview {
-    ChatsCell(chat: "Katya")
+    ChatsCell(recent: Recent(uid: "", avatarLink: "", text: "text"))
 }

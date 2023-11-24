@@ -4,12 +4,12 @@ struct ChatsView: View {
     @State private var show = false
     @State private var selectedPerson: Person?
     @State private var path = [Recent]()
-    @State private var recents: [Recent] = []
+    @ObservedObject var viewModel = ChatsViewModel()
     var body: some View {
         NavigationStack(path: $path) {
-            List(recents, id: \.self) { chat in
-                NavigationLink(value: chat) {
-                    ChatsCell(chat: chat.uid)
+            List(viewModel.recents) { recent in
+                NavigationLink(value: recent) {
+                    ChatsCell(recent: recent)
                 }
                 .listRowSeparator(.hidden)
             }

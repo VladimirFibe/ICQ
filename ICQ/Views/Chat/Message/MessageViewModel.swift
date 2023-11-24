@@ -7,14 +7,14 @@ struct MessageViewModel {
         message.avatarLink
     }
 
-    var uid: String {
-        message.uid
-    }
-
-    var currentUid: String {
-        Person.currentId
-    }
-
+//    var uid: String {
+//        message.uid
+//    }
+//
+//    var currentUid: String {
+//        Person.currentId
+//    }
+//
     var text: String {
         message.text
     }
