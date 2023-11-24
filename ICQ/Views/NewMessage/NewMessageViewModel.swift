@@ -11,9 +11,8 @@ final class NewMessageViewModel: ObservableObject {
     func fetchPersons() {
         Task {
             do {
-                let snapshot = try await Firestore.firestore().collection("persons").getDocuments()
-                persons = snapshot.documents.compactMap { try? $0.data(as: Person.self)}
-                persons = persons.filter{$0.id != Person.currentId}
+                let snapshot = try await COLLECTION_PERSONS.getDocuments()
+                persons = snapshot.documents.compactMap { try? $0.data(as: Person.self)}.filter{$0.id != Person.currentId}
             } catch {
                 print(error.localizedDescription)
             }

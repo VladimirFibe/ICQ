@@ -34,6 +34,8 @@
 		02C302762B0F66A100C8F5E4 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C302752B0F66A100C8F5E4 /* EditProfileViewModel.swift */; };
 		02C302792B0F7D6B00C8F5E4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 02C302782B0F7D6B00C8F5E4 /* Kingfisher */; };
 		02C3027B2B0F80C600C8F5E4 /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3027A2B0F80C600C8F5E4 /* NewMessageViewModel.swift */; };
+		02C3027D2B102F6500C8F5E4 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3027C2B102F6500C8F5E4 /* Recent.swift */; };
+		02C302802B10429E00C8F5E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3027F2B10429E00C8F5E4 /* Constants.swift */; };
 		02EE1E962B0C9842008812F2 /* ICQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E952B0C9842008812F2 /* ICQApp.swift */; };
 		02EE1E982B0C9842008812F2 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EE1E972B0C9842008812F2 /* AuthenticationView.swift */; };
 		02EE1E9A2B0C9843008812F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EE1E992B0C9843008812F2 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		02C302732B0F64A600C8F5E4 /* SettingsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderViewModel.swift; sourceTree = "<group>"; };
 		02C302752B0F66A100C8F5E4 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		02C3027A2B0F80C600C8F5E4 /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
+		02C3027C2B102F6500C8F5E4 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		02C3027F2B10429E00C8F5E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		02EE1E922B0C9842008812F2 /* ICQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EE1E952B0C9842008812F2 /* ICQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICQApp.swift; sourceTree = "<group>"; };
 		02EE1E972B0C9842008812F2 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -129,12 +133,11 @@
 		02A18DB82B0DCC840010F233 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				02A18DB62B0DCC7C0010F233 /* ChatView.swift */,
+				02C3027E2B10319100C8F5E4 /* Chat */,
 				02A18DB92B0DD07F0010F233 /* ChatBubble.swift */,
 				02A18DBB2B0DD59C0010F233 /* MessageView.swift */,
 				02A18DBD2B0DD6210010F233 /* MessageViewModel.swift */,
 				02A18DC12B0DE9E60010F233 /* ChatInputView.swift */,
-				02A18DC42B0DF9C90010F233 /* ChatViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			children = (
 				02A18DBF2B0DD6E80010F233 /* Message.swift */,
 				02A18DDE2B0E14C80010F233 /* Person.swift */,
+				02C3027C2B102F6500C8F5E4 /* Recent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +210,15 @@
 				02EE1EB42B0CBCE9008812F2 /* AuthHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		02C3027E2B10319100C8F5E4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				02A18DC42B0DF9C90010F233 /* ChatViewModel.swift */,
+				02A18DB62B0DCC7C0010F233 /* ChatView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		02EE1E892B0C9842008812F2 = {
@@ -302,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				02EE1E992B0C9843008812F2 /* Assets.xcassets */,
+				02C3027F2B10429E00C8F5E4 /* Constants.swift */,
 				02A18DC62B0E0D5C0010F233 /* GoogleService-Info.plist */,
 				02EE1E9B2B0C9843008812F2 /* Preview Content */,
 			);
@@ -433,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A18DC52B0DF9C90010F233 /* ChatViewModel.swift in Sources */,
+				02C3027D2B102F6500C8F5E4 /* Recent.swift in Sources */,
 				02C3027B2B0F80C600C8F5E4 /* NewMessageViewModel.swift in Sources */,
 				02EE1ECB2B0CE536008812F2 /* EditProfileView.swift in Sources */,
 				02C302742B0F64A600C8F5E4 /* SettingsHeaderViewModel.swift in Sources */,
@@ -446,6 +461,7 @@
 				02C3026D2B0F14DA00C8F5E4 /* AuthenticationState.swift in Sources */,
 				02EE1ECD2B0CF063008812F2 /* StatusSelectorView.swift in Sources */,
 				02A18DBC2B0DD59C0010F233 /* MessageView.swift in Sources */,
+				02C302802B10429E00C8F5E4 /* Constants.swift in Sources */,
 				02EE1EA42B0C9877008812F2 /* LoginView.swift in Sources */,
 				02EE1EC62B0CD8A0008812F2 /* SettingsCellViewModel.swift in Sources */,
 				02EE1EBA2B0CC413008812F2 /* SettingsView.swift in Sources */,

@@ -2,7 +2,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct AuthenticationView: View {
-    @ObservedObject var viewModel = AuthenticationViewModel()
+    @ObservedObject var viewModel = AuthenticationViewModel.shared
     var body: some View {
         switch viewModel.authenticationState {
         case .unauthenticated:  LoginView()

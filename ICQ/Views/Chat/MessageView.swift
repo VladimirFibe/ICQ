@@ -4,9 +4,9 @@ struct MessageView: View {
     let viewModel: MessageViewModel
     var body: some View {
         HStack {
-            if let url = viewModel.image {
+            if let url = viewModel.avatarLink {
                 VStack(alignment: .leading) {
-                    if let name = viewModel.message.name {
+                    if let name = viewModel.name {
                         Text(name)
                             .foregroundColor(.gray)
                             .font(.system(size: 14))
@@ -20,7 +20,6 @@ struct MessageView: View {
                             .font(.system(size: 15))
                             .cornerRadius(16, isFromCurrentUser: false)
                     }
-//                    .padding(.leading)
                     .padding(.trailing, 80)
                 }
                 Spacer()
@@ -32,7 +31,6 @@ struct MessageView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 15))
                     .cornerRadius(16, isFromCurrentUser: true)
-//                    .padding(.trailing)
                     .padding(.leading, 100)
             }
         }
@@ -40,5 +38,6 @@ struct MessageView: View {
 }
 
 #Preview {
-    MessageView(viewModel: MessageViewModel(message: Message(profileImageUrl: nil)))
+    MessageView(viewModel: MessageViewModel(message: Message()))
+        .padding(.horizontal)
 }

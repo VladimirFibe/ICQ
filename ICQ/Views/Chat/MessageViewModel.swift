@@ -3,19 +3,23 @@ import SwiftUI
 struct MessageViewModel {
     let message: Message
     
-    var image: String? {
-        message.profileImageUrl
+    var avatarLink: String? {
+        message.avatarLink
     }
 
     var uid: String {
         message.uid
     }
 
-//    var currentUid: String {
-//        AuthViewModel.shared.person.id ?? ""
-//    }
+    var currentUid: String {
+        Person.currentId
+    }
 
     var text: String {
         message.text
+    }
+
+    var name: String? {
+        message.name
     }
 }

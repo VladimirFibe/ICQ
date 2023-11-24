@@ -2,8 +2,7 @@ import SwiftUI
 
 struct ChatView: View {
     @State private var text = ""
-    @ObservedObject var viewModel = ChatViewModel()
-    var person: Person
+    @ObservedObject var viewModel: ChatViewModel
     var body: some View {
         VStack {
             List(viewModel.messages) { message in
@@ -12,20 +11,21 @@ struct ChatView: View {
             }
             .listStyle(.plain)
             ChatInputView(text: $text) {
-                let message = Message(text: text)
-                viewModel.messages.append(message)
+                if !text.isEmpty {
+                    viewModel.sendMessage(text)
+                }
                 text = ""
             }
         }
         .toolbar(.hidden, for: .tabBar)
-        .navigationTitle(person.username)
+        .navigationTitle(viewModel.friendName)
         .onAppear {
             viewModel.getMessages()
         }
     }
 
 }
-//
-//#Preview {
-//    ChatView()
-//}
+
+#Preview {
+    ChatView(viewModel: ChatViewModel(recent: Recent(uid: "", avatarLink: "", text: "")))
+}

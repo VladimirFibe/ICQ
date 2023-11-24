@@ -5,9 +5,11 @@ import FirebaseAuth
 final class AuthenticationViewModel: ObservableObject {
     @Published var addPhoto = false
     @Published var authenticationState: AuthenticationState = .unauthenticated
+    @Published var person: Person?
+
     private var authStateHandler: AuthStateDidChangeListenerHandle?
-    
-    init() {
+    static let shared = AuthenticationViewModel()
+    private init() {
         registerAuthStateHandler()
     }
     
@@ -27,8 +29,10 @@ final class AuthenticationViewModel: ObservableObject {
     func fetchPerson() {
         Task {
             do {
-                try await FirebaseClient.shared.fetchPerson()
-                if let link = FirebaseClient.shared.person?.avatarLink, link.isEmpty {
+                guard let id = Auth.auth().currentUser?.uid else { return }
+                let querySnapshot = try await COLLECTION_PERSONS.document(id).getDocument()
+                person = try? querySnapshot.data(as: Person.self)
+                if let link = person?.avatarLink, link.isEmpty {
                     addPhoto = true
                 }
                 authenticationState = .authenticated

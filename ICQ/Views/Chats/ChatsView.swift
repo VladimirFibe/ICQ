@@ -3,13 +3,13 @@ import SwiftUI
 struct ChatsView: View {
     @State private var show = false
     @State private var selectedPerson: Person?
-    @State private var path = [String]()
-    @State private var chats: [String] = ["Vladimir", "Katya", "Masha", "Nastya", "Semyon", "Margarita", "Violetta"]
+    @State private var path = [Recent]()
+    @State private var recents: [Recent] = []
     var body: some View {
         NavigationStack(path: $path) {
-            List(chats, id: \.self) { chat in
+            List(recents, id: \.self) { chat in
                 NavigationLink(value: chat) {
-                    ChatsCell(chat: chat)
+                    ChatsCell(chat: chat.uid)
                 }
                 .listRowSeparator(.hidden)
             }
@@ -29,15 +29,14 @@ struct ChatsView: View {
                         .padding()
                 }
             }
-            .navigationDestination(for: String.self) { chat in
-                ChatView(person: Person(username: chat))
+            .navigationDestination(for: Recent.self) { recent in
+                ChatView(viewModel: ChatViewModel(recent: recent))
             }
         }
         .sheet(isPresented: $show, onDismiss: {
             if let person = selectedPerson {
-                let chat = person.username
-                chats.append(chat)
-                path = [chat]
+                let recent = Recent(id: person.id, uid: person.username, avatarLink: person.avatarLink, text: "")
+                path = [recent]
                 selectedPerson = nil
             }
         }) {
