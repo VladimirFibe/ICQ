@@ -4,7 +4,7 @@ import Firebase
 
 import Foundation
 
-struct Message: Identifiable {
+struct Message: Identifiable, Codable {
     @DocumentID var id: String? = UUID().uuidString
     var uid: String = ""
     var name: String? = "Vladimir"

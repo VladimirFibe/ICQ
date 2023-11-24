@@ -8,19 +8,35 @@ final class ChatViewModel: ObservableObject {
     let friendUid: String
     let friendName: String
     let friendUrl: String
+    let currentUid: String
+    let currentName: String
+    let currentUrl: String
     init(recent: Recent) {
         friendUid = recent.id ?? ""
         friendName = recent.uid
         friendUrl = recent.avatarLink
+        guard let person = AuthenticationViewModel.shared.person, let id = person.id
+        else { fatalError("Where current person?")}
+        currentUid = id
+        currentName = person.fullname
+        currentUrl = person.avatarLink
+        fetchMessages()
     }
-    func getMessages() {
-        messages = mockMessages
+
+    func fetchMessages() {
+        let query = COLLECTION_MESSAGES
+            .document(currentUid)
+            .collection(friendUid)
+            .order(by: "timestamp", descending: false)
+
+        query.addSnapshotListener { snapshot, _ in
+            guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
+            let messages = changes.compactMap { try? $0.document.data(as: Message.self)}
+            self.messages.append(contentsOf: messages)
+        }
     }
 
     func sendMessage(_ text: String) {
-        guard let me = AuthenticationViewModel.shared.person, 
-        let currentUid = me.id else { return }
-
         let currentRef = COLLECTION_MESSAGES
           .document(currentUid)
           .collection(friendUid)
@@ -44,15 +60,15 @@ final class ChatViewModel: ObservableObject {
             .document(friendUid)
             .setData(data)
 
-        data["uid"] = me.fullname
-        data["avatarLink"] = me.avatarLink
+        data["uid"] = currentName
+        data["avatarLink"] = currentUrl
         COLLECTION_MESSAGES
           .document(friendUid)
           .collection("recents")
           .document(currentUid)
           .setData(data)
 
-        data["uid"] = me.id
+        data["uid"] = currentUid
         COLLECTION_MESSAGES
           .document(friendUid)
           .collection(currentUid)

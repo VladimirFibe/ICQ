@@ -19,9 +19,6 @@ struct ChatView: View {
         }
         .toolbar(.hidden, for: .tabBar)
         .navigationTitle(viewModel.friendName)
-        .onAppear {
-            viewModel.getMessages()
-        }
     }
 
 }
